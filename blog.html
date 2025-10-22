@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <!-- Definições básicas do documento -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog da ONG Semente do Futuro, com notícias e atualizações.">
+    <title>Semente do Futuro - Blog</title>
+    
+    <!-- Ícone que aparece na aba do navegador -->
+    <link rel="icon" type="image/png" href="Assets/images/icon-semente-do-futuro.png">
+    
+    <!-- Estilos principais do site -->
+    <link rel="stylesheet" href="Assets/css/base.css">
+    <link rel="stylesheet" href="Assets/css/layout.css">
+    <link rel="stylesheet" href="Assets/css/components.css">
+</head>
+<body>
+    <header>
+        <!-- Nome da ONG como título principal -->
+        <h1>Semente do Futuro</h1>
+
+        <!-- Botão para alternar entre modo claro/escuro -->
+        <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Alterar tema">
+            <img src="Assets/images/sun.png" alt="Ícone de Sol" class="icon-sun">
+            <img src="Assets/images/moon.png" alt="Ícone de Lua" class="icon-moon">
+        </button>
+
+        <!-- Menu hambúrguer (aparece em telas menores) -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox">
+        <label for="menu-toggle" class="menu-hamburguer">
+            <!-- Ícone do menu (3 linhas) em SVG -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M3 12H21" stroke="var(--color-text)" stroke-width="2" stroke-linecap="round"/>
+                <path d="M3 6H21" stroke="var(--color-text)" stroke-width="2" stroke-linecap="round"/>
+                <path d="M3 18H21" stroke="var(--color-text)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </label>
+
+        <!-- Navegação principal do site -->
+        <nav aria-label="Menu principal">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li class="dropdown">
+                    <a href="projetos.html">Projetos &#9662;</a> <ul class="dropdown-menu">
+                        <li><a href="#">Educação para Todos</a></li>
+                        <li><a href="#">Saúde em Movimento</a></li>
+                        <li><a href="#">Verde para o Futuro</a></li>
+                    </ul>
+                </li>
+                <li><a href="voluntariado.html">Voluntariado</a></li>
+                <li><a href="doacoes.html">Doações</a></li>
+                <li><a href="transparencia.html">Transparência</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <!-- Página atual está destacada -->
+                <li><a href="blog.html" class="active-link">Blog</a></li>
+            </ul>
+        </nav>
+
+        <!-- Botão de destaque para doações -->
+        <a href="doacoes.html" class="btn btn-primary">Seja um Doador</a>
+    </header>
+
+    <main>
+        <!-- Seção principal do blog -->
+        <section id="blog-posts" aria-labelledby="titulo-blog">
+            <div class="container">
+                <h2 id="titulo-blog">Nossas Notícias e Histórias</h2>
+                <p>Acompanhe as últimas novidades, histórias de impacto e atualizações sobre nossos projetos.</p>
+                
+                <!-- Grade com os posts -->
+                <div class="grid">
+                    <!-- Cada artigo do blog -->
+                    <article class="card col-4">
+                        <h3>Projeto Verde para o Futuro completa 1 ano de atividades</h3>
+                        <p>O projeto de preservação ambiental alcançou mais de 500 voluntários e plantou 2.000 árvores...</p>
+                        <a href="#">Leia mais &rarr;</a>
+                    </article>
+                    
+                    <article class="card col-4">
+                        <h3>Campanha de Doações "Educação para Todos" Bate Meta</h3>
+                        <p>Mais de 300 jovens foram beneficiados com cursos e materiais educativos graças à generosidade de nossos doadores.</p>
+                        <a href="#">Leia mais &rarr;</a>
+                    </article>
+                    
+                    <article class="card col-4">
+                        <h3>Voluntariado "Saúde em Movimento" realiza 1.200 atendimentos</h3>
+                        <p>Profissionais voluntários da área da saúde realizaram um mutirão com mais de mil atendimentos em comunidades carentes.</p>
+                        <a href="#">Leia mais &rarr;</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Semente do Futuro. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <!-- Script para alternar o tema claro/escuro -->
+    <script src="Assets/js/theme-toggle.js"></script>
+    
+</body>
+</html>

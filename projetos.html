@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <!-- Metadados da página -->
+    <meta charset="UTF-8"> <!-- Codificação de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade -->
+    <meta name="description" content="Conheça os projetos sociais da ONG Semente do Futuro, participe e apoie nossas ações."> <!-- Descrição SEO -->
+    <title>Semente do Futuro - Projetos</title> <!-- Título da página -->
+
+    <!-- Ícone do site -->
+    <link rel="icon" type="image/png" href="Assets/images/icon-semente-do-futuro.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="Assets/css/base.css">
+    <link rel="stylesheet" href="Assets/css/layout.css">
+    <link rel="stylesheet" href="Assets/css/components.css">
+</head>
+<body>
+    
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Semente do Futuro</h1>
+
+        <!-- Botão para alternar tema -->
+        <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Alterar tema">
+            <img src="Assets/images/sun.png" alt="Ícone de Sol" class="icon-sun">
+            <img src="Assets/images/moon.png" alt="Ícone de Lua" class="icon-moon">
+        </button>
+
+        <!-- Menu hamburguer -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox">
+        <label for="menu-toggle" class="menu-hamburguer">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 12H21" stroke="var(--color-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3 6H21" stroke="var(--color-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3 18H21" stroke="var(--color-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </label>
+
+        <!-- Navegação principal -->
+        <nav aria-label="Menu principal">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li class="dropdown">
+                    <a href="projetos.html" class="active-link">Projetos &#9662;</a> <ul class="dropdown-menu">
+                        <li><a href="#">Educação para Todos</a></li>
+                        <li><a href="#">Saúde em Movimento</a></li>
+                        <li><a href="#">Verde para o Futuro</a></li>
+                    </ul>
+                </li>   <!-- Página atual -->
+                <li><a href="voluntariado.html">Voluntariado</a></li>
+                <li><a href="doacoes.html">Doações</a></li>
+                <li><a href="transparencia.html">Transparência</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+        <a href="doacoes.html" class="btn btn-primary">Seja um Doador</a> <!-- Botão de ação -->
+    </header>
+
+    <main>
+        <!-- Seção de projetos -->
+        <section id="nossos-projetos" aria-labelledby="titulo-projetos">
+            <div class="container">
+                <h2 id="titulo-projetos">Nossos Projetos</h2>
+                <div class="grid">
+                    <!-- Card de projeto -->
+                    <article class="card col-4">
+                        <img src="Assets/images/criancas-tecnologia.jpg" alt="Jovens em uma sala de aula de tecnologia, interagindo com computadores." style="width:100%; border-radius: var(--radius-lg);">
+                        <h3>Educação para Todos</h3>
+                        <p>Capacitação de jovens em situação de vulnerabilidade através de cursos gratuitos de tecnologia e programação.</p>
+                    </article>
+
+                    <!-- Card de projeto -->
+                    <article class="card col-4">
+                        <img src="Assets/images/Medicos-servico-comunitario.jpg" alt="Equipe médica sorrindo durante um atendimento comunitário ao ar livre." style="width:100%; border-radius: var(--radius-lg);">
+                        <h3>Saúde em Movimento</h3>
+                        <p>Levar atendimentos médicos e ações de saúde preventiva para comunidades periféricas e de difícil acesso.</p>
+                    </article>
+
+                    <!-- Card de projeto -->
+                    <article class="card col-4">
+                        <img src="Assets/images/voluntarios-plantando-arvores-no-campo.jpg" alt="Grupo de voluntários plantando mudas de árvores em uma área de reflorestamento." style="width:100%; border-radius: var(--radius-lg);">
+                        <h3>Verde para o Futuro</h3>
+                        <p>Iniciativas de plantio e preservação ambiental, envolvendo voluntários para um futuro mais sustentável.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Seção de inscrição -->
+        <section id="inscricao-projeto" aria-labelledby="titulo-inscricao">
+            <div class="container">
+                <h2 id="titulo-inscricao">Inscreva-se em um Projeto</h2>
+                <form action="#" data-validate="true" method="post" class="card" data-modal-title="Inscrição Enviada!" data-modal-text="Recebemos seus dados com sucesso. Entraremos em contato em breve pelo email fornecido. Obrigado por seu interesse em fazer a diferença!"> 
+                    <fieldset>
+                        <legend>Inscreva-se para Participar</legend>
+
+                        <label for="nome-projeto">Nome completo:</label>
+                        <input type="text" id="nome-projeto" name="nome" required>
+
+                        <label for="email-projeto">Email:</label>
+                        <input type="email" id="email-projeto" name="email" required>
+
+                        <label for="projeto-select">Selecione o projeto:</label>
+                        <select id="projeto-select" name="projeto" required>
+                            <option value="">Escolha um projeto</option>
+                            <option value="educacao">Educação para Todos</option>
+                            <option value="saude">Saúde em Movimento</option>
+                            <option value="verde">Verde para o Futuro</option>
+                        </select>
+
+                        <label for="motivacao">Motivação:</label>
+                        <textarea id="motivacao" name="motivacao" minlength="20" required placeholder="Conte-nos sua motivação para participar"></textarea>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Você possui experiência prévia em voluntariado?</legend>
+                        
+                        <div class="radio-group">
+                            <input type="radio" id="exp-sim" name="experiencia" value="sim" required>
+                            <label for="exp-sim">Sim</label>
+                        </div>
+                        <div class="radio-group">
+                            <input type="radio" id="exp-nao" name="experiencia" value="nao" required>
+                            <label for="exp-nao">Não</label>
+                        </div>
+                    </fieldset>
+                    
+                    <button type="submit" class="btn btn-primary">Enviar Inscrição</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Semente do Futuro. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <div id="success-modal" class="modal">
+        <div class="modal-content card">
+            <button class="modal-close-btn" aria-label="Fechar">&times;</button>
+            <h3>Inscrição Enviada!</h3>
+            <p>Recebemos seus dados com sucesso. Entraremos em contato em breve pelo email fornecido. Obrigado por seu interesse em fazer a diferença!</p>
+        </div>
+    </div>
+
+    <!-- Script para alternar tema claro/escuro -->
+    <script src="Assets/js/theme-toggle.js"></script>
+
+    <!-- Script para pop-up de agradecimento -->
+    <script src="Assets/js/modal.js"></script>
+
+    <!-- Script validação de formulário -->
+    <script src="Assets/js/validation.js"></script>
+
+</body>
+</html>

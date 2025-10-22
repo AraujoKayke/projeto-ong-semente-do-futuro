@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <!-- Metadados da página -->
+    <meta charset="UTF-8"> <!-- Codificação de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade -->
+    <meta name="description" content="Portal da Transparência da ONG Semente do Futuro, com relatórios e gráficos de impacto."> <!-- SEO -->
+    <title>Semente do Futuro - Transparência</title> <!-- Título da página -->
+
+    <!-- Ícone do site -->
+    <link rel="icon" type="image/png" href="Assets/images/icon-semente-do-futuro.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="Assets/css/base.css">
+    <link rel="stylesheet" href="Assets/css/layout.css">
+    <link rel="stylesheet" href="Assets/css/components.css">
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Semente do Futuro</h1>
+
+        <!-- Botão para alternar tema -->
+        <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Alterar tema">
+            <img src="Assets/images/sun.png" alt="Ícone de Sol" class="icon-sun">
+            <img src="Assets/images/moon.png" alt="Ícone de Lua" class="icon-moon">
+        </button>
+
+        <!-- Menu hamburguer -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox">
+        <label for="menu-toggle" class="menu-hamburguer">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 12H21" stroke="var(--color-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3 6H21" stroke="var(--color-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3 18H21" stroke="var(--color-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </label>
+
+        <!-- Navegação principal -->
+        <nav aria-label="Menu principal">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li class="dropdown">
+                    <a href="projetos.html">Projetos &#9662;</a> <ul class="dropdown-menu">
+                        <li><a href="#">Educação para Todos</a></li>
+                        <li><a href="#">Saúde em Movimento</a></li>
+                        <li><a href="#">Verde para o Futuro</a></li>
+                    </ul>
+                </li>
+                <li><a href="voluntariado.html">Voluntariado</a></li>
+                <li><a href="doacoes.html">Doações</a></li>
+                <li><a href="transparencia.html" class="active-link">Transparência</a></li> <!-- Página atual -->
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+        <a href="doacoes.html" class="btn btn-primary">Seja um Doador</a> <!-- Botão de ação -->
+    </header>
+
+    <main>
+        <!-- Seção Portal da Transparência -->
+        <section id="prestacao-contas" aria-labelledby="titulo-prestacao">
+            <div class="container">
+                <h2 id="titulo-prestacao">Portal da Transparência</h2>
+                <p>Acreditamos que a transparência é o pilar da confiança. Nesta seção, você pode visualizar como os recursos são aplicados e o impacto real que geramos juntos.</p>
+                
+                <div class="grid">
+                    <!-- Gráfico de pizza: Distribuição de Recursos -->
+                    <article class="card col-4">
+                        <h3>Distribuição de Recursos</h3>
+                        <canvas id="chart-pie" aria-label="Gráfico de pizza mostrando a distribuição de recursos por projeto" role="img"></canvas>
+                    </article>
+
+                    <!-- Gráfico de linha: Evolução de Voluntários -->
+                    <article class="card col-4">
+                        <h3>Evolução de Voluntários</h3>
+                        <canvas id="chart-line" aria-label="Gráfico de linha mostrando o crescimento do número de voluntários ao longo do tempo" role="img"></canvas>
+                    </article>
+
+                    <!-- Gráfico de barras: Impacto Social por Região -->
+                    <article class="card col-4">
+                        <h3>Impacto Social por Região</h3>
+                        <canvas id="chart-bar" aria-label="Gráfico de barras mostrando o impacto social gerado em diferentes regiões" role="img"></canvas>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Documentos -->
+        <section id="documentos" aria-labelledby="titulo-documentos">
+            <div class="container">
+                <h2 id="titulo-documentos">Relatórios e Documentos</h2>
+                <p>Acesse nossos relatórios anuais para uma visão completa de nossas atividades, finanças e impacto social.</p>
+                <ul>
+                    <li><a href="docs/relatorio-atividades-2024.pdf" target="_blank">Relatório de Atividades 2024</a></li>
+                    <li><a href="docs/relatorio-financeiro-2024.pdf" target="_blank">Relatório Financeiro 2024</a></li>
+                    <li><a href="docs/relatorio-impacto-2024.pdf" target="_blank">Relatório de Impacto Social 2024</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Semente do Futuro. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Script para alternar tema claro/escuro -->
+    <script src="Assets/js/theme-toggle.js"></script>
+    
+    <!-- Biblioteca Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Script para inicializar os gráficos -->
+    <script src="Assets/js/charts.js"></script>
+</body>
+</html>

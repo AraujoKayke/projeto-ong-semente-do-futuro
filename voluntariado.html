@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <!-- Metadados da página -->
+    <meta charset="UTF-8"> <!-- Codificação de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade -->
+    <meta name="description" content="Cadastro de voluntários para participar dos projetos da ONG Semente do Futuro."> <!-- SEO -->
+    <title>Semente do Futuro - Voluntariado</title> <!-- Título da página -->
+
+    <!-- Ícone do site -->
+    <link rel="icon" type="image/png" href="Assets/images/icon-semente-do-futuro.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="Assets/css/base.css">
+    <link rel="stylesheet" href="Assets/css/layout.css">
+    <link rel="stylesheet" href="Assets/css/components.css">
+</head>
+<body>
+    
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Semente do Futuro</h1>
+
+        <!-- Botão para alternar tema -->
+        <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Alterar tema">
+            <img src="Assets/images/sun.png" alt="Ícone de Sol" class="icon-sun">
+            <img src="Assets/images/moon.png" alt="Ícone de Lua" class="icon-moon">
+        </button>
+
+        <!-- Menu hamburguer -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox">
+        <label for="menu-toggle" class="menu-hamburguer">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 12H21" stroke="var(--color-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3 6H21" stroke="var(--color-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3 18H21" stroke="var(--color-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </label>
+
+        <!-- Navegação principal -->
+        <nav aria-label="Menu principal">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li class="dropdown">
+                    <a href="projetos.html">Projetos &#9662;</a> <ul class="dropdown-menu">
+                        <li><a href="#">Educação para Todos</a></li>
+                        <li><a href="#">Saúde em Movimento</a></li>
+                        <li><a href="#">Verde para o Futuro</a></li>
+                    </ul>
+                </li>
+                <li><a href="voluntariado.html" class="active-link">Voluntariado</a></li> <!-- Página atual -->
+                <li><a href="doacoes.html">Doações</a></li>
+                <li><a href="transparencia.html">Transparência</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+        <a href="doacoes.html" class="btn btn-primary">Seja um Doador</a> <!-- Botão de ação -->
+    </header>
+
+    <main>
+        <!-- Seção de Cadastro de Voluntário -->
+        <section id="cadastro-voluntario" aria-labelledby="titulo-cadastro">
+            <div class="container">
+                <h2 id="titulo-cadastro">Seja um Voluntário</h2>
+                <p>Preencha o formulário abaixo para fazer parte da nossa equipe de transformação. Estamos ansiosos para ter você conosco!</p>
+
+                <!-- Formulário de voluntariado -->
+                <form id="form-voluntario" action="#" data-validate="true" method="post" class="card" data-modal-title="Cadastro Recebido!" data-modal-text="Obrigado por seu interesse! Analisaremos seu cadastro e entraremos em contato.">
+
+                    <!-- Dados Pessoais -->
+                    <fieldset>
+                        <legend>Seus Dados Pessoais</legend>
+
+                        <label for="nome">Nome completo:</label>
+                        <input type="text" id="nome" name="nome" required minlength="3">
+
+                        <label for="cpf">CPF:</label>
+                        <input type="text" id="cpf" name="cpf" required pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="000.000.000-00">
+                        
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="telefone">Telefone:</label>
+                        <input type="text" id="telefone" name="telefone" required pattern="\(\d{2}\) \d{4,5}-\d{4}" placeholder="(00) 00000-0000">
+                    </fieldset>
+                    
+                    <!-- Habilidades e Disponibilidade -->
+                    <fieldset>
+                        <legend>Suas Habilidades e Disponibilidade</legend>
+                        
+                        <label>Quais áreas de atuação mais te interessam?</label>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="habilidade1" name="habilidades" value="ensino">
+                            <label for="habilidade1">Ensino / Educação</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="habilidade2" name="habilidades" value="saude">
+                            <label for="habilidade2">Saúde</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="habilidade3" name="habilidades" value="meio-ambiente">
+                            <label for="habilidade3">Meio Ambiente</label>
+                        </div>
+                        
+                        <label for="disponibilidade" style="margin-top: var(--space-3);">Qual sua disponibilidade?</label>
+                        <select id="disponibilidade" name="disponibilidade" required>
+                            <option value="">Selecione uma opção</option>
+                            <option value="fim_semana">Fins de semana</option>
+                            <option value="semanal">Durante a semana</option>
+                            <option value="ocasional">Eventos ocasionais</option>
+                        </select>
+                    </fieldset>
+                    
+                    <!-- Botão de envio -->
+                    <button type="submit" class="btn btn-primary">Quero ser voluntário!</button>
+
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Semente do Futuro. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <div id="success-modal" class="modal">
+        <div class="modal-content card">
+            <button class="modal-close-btn" aria-label="Fechar">&times;</button>
+            <h3>Cadastro Recebido!</h3>
+            <p>Obrigado por seu interesse! Analisaremos seu cadastro e entraremos em contato.</p>
+        </div>
+    </div>
+
+    <!-- Script para alternar tema claro/escuro -->
+    <script src="Assets/js/theme-toggle.js"></script>
+    
+    <!-- Script para pop-up de agradecimento -->
+    <script src="Assets/js/modal.js"></script>
+
+    <!-- Script validação de formulário -->
+    <script src="Assets/js/validation.js"></script>
+
+</body>
+</html>

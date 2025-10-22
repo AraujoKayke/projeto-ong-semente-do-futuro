@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <!-- Metadados da página -->
+    <meta charset="UTF-8"> <!-- Define a codificação de caracteres da página -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade em dispositivos móveis -->
+    <meta name="description" content="Plataforma digital da ONG Semente do Futuro — divulgação de projetos, voluntariado e doações."> <!-- Descrição para SEO -->
+    <title>Semente do Futuro - Início</title> <!-- Título da página -->
+
+    <!-- Ícone do site -->
+    <link rel="icon" type="image/png" href="Assets/images/icon-semente-do-futuro.png">
+
+    <!-- Arquivos CSS -->
+    <link rel="stylesheet" href="Assets/css/base.css"> <!-- Estilos base -->
+    <link rel="stylesheet" href="Assets/css/layout.css"> <!-- Layout geral da página -->
+    <link rel="stylesheet" href="Assets/css/components.css"> <!-- Componentes reutilizáveis -->
+</head>
+<body>
+    
+    <!-- Cabeçalho da página -->
+    <header>
+        <h1>Semente do Futuro</h1> <!-- Logo / título principal -->
+
+        <!-- Botão para alternar tema claro/escuro -->
+        <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Alterar tema">
+            <img src="Assets/images/sun.png" alt="Ícone de Sol" class="icon-sun"> <!-- Ícone do tema claro -->
+            <img src="Assets/images/moon.png" alt="Ícone de Lua" class="icon-moon"> <!-- Ícone do tema escuro -->
+        </button>
+
+        <!-- Menu hamburguer para dispositivos móveis -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox"> <!-- Checkbox para controlar a abertura do menu -->
+        <label for="menu-toggle" class="menu-hamburguer">
+            <!-- Ícone do menu hamburguer -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 12H21" stroke="var(--color-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3 6H21" stroke="var(--color-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3 18H21" stroke="var(--color-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </label>
+
+        <!-- Menu de navegação principal -->
+        <nav aria-label="Menu principal">
+            <ul>
+                <li><a href="index.html" class="active-link">Início</a></li> <!-- Link para a página inicial -->
+                <li><a href="#sobre">Sobre</a></li> <!-- Link para a página Sobre -->
+                <li class="dropdown">
+                    <a href="#projetos">Projetos &#9662;</a> <ul class="dropdown-menu"> <!-- Link para a página Projetos -->
+                        <li><a href="#projetos">Educação para Todos</a></li>
+                        <li><a href="#projetos">Saúde em Movimento</a></li>
+                        <li><a href="#projetos">Verde para o Futuro</a></li>
+                    </ul>
+                </li> 
+                <li><a href="#voluntariado">Voluntariado</a></li> <!-- Link para a página Voluntariado -->
+                <li><a href="#doacoes">Doações</a></li> <!-- Link para a página Doações -->
+                <li><a href="#transparencia">Transparência</a></li> <!-- Link para a página Transparência -->
+                <li><a href="#contato">Contato</a></li> <!-- Link para a página Contato -->
+                <li><a href="#blog">Blog</a></li> <!-- Link para o Blog -->
+            </ul>
+        </nav>
+        
+        <!-- Botão de chamada para ação -->
+        <a href="#doacoes" class="btn btn-primary">Seja um Doador</a> <!-- Link para página de doações -->
+    </header>
+
+    <main>
+        <!-- Seção principal com carrossel de imagens -->
+        <section class="hero" aria-label="Imagens de destaque das nossas ações">
+            <div class="hero-carousel"> <!-- Container do carrossel -->
+                <!-- Cada imagem representa uma ação ou projeto da ONG -->
+                <img src="Assets/images/voluntarios-plantando-arvores-no-campo.jpg" alt="Voluntários em ação de reflorestamento." class="carousel-image active">
+                <img src="Assets/images/criancas-estudando.webp" alt="Criança sorrindo em sala de aula." class="carousel-image">
+                <img src="Assets/images/Medicos-servico-comunitario.jpg" alt="Equipe médica realizando atendimento comunitário." class="carousel-image">
+                <img src="Assets/images/mulher-comunicacao.jpg" alt="Voluntária organizando doações." class="carousel-image">
+                <img src="Assets/images/criancas-tecnologia.jpg" alt="Jovens aprendendo sobre tecnologia." class="carousel-image">
+                <img src="Assets/images/visao-de-maos-em-forma-de-coracao-para-representar-afeicao.jpg" alt="Mãos em forma de coração" class="carousel-image">
+                <img src="Assets/images/pessoas-empilhando-as-maos-juntas-no-parque.jpg" alt="Pessoas empilhando as maos juntas no parque." class="carousel-image">
+                <img src="Assets/images/Ong-Fornecendo-Alimentos.jpg" alt="Ong fornecendo alimentos." class="carousel-image">
+                <img src="Assets/images/grupo-de-diferentes-pessoas-oferecendo-se-como-voluntario-em-um-banco-de-alimentos-para-pessoas-pobres.jpg" alt="Voluntarios oferecendo água para pessoas" class="carousel-image">
+                <img src="Assets/images/grupo-de-diferentes-pessoas-oferecendo-se-como-voluntario-em-um-banco-de-alimentos-para-pessoas-pobres-2.png" alt="Ong fornecendo água para pessoas." class="carousel-image">
+                <img src="Assets/images/diferentes-pessoas-fazendo-trabalho-voluntario-com-alimentos.jpg" alt="Trablho voluntario com alimentos." class="carousel-image">
+                <img src="Assets/images/guy-e-garota-estao-sentados-a-mesa-garota-africana-na-aula-de-ciencia-da-computacao-criancas-jogando-jogos-de-computador.jpg" alt="Crianças estudando ciência da computação." class="carousel-image">
+                <img src="Assets/images/criancas-usando-eletronico-dispositivos.webp" alt="Crianças estudando tecnologia." class="carousel-image">
+                <img src="Assets/images/ativistas-abracando-andar-com-sacolas-lixo-em-madeiras.jpg" alt="Pessoas andando abraçadas com sacolas de lixo." class="carousel-image">
+                <img src="Assets/images/criancas-lindas-e-multietnicas-aprendendo-usar-oculos-de-realidade-virtual.jpg" alt="Crianças aprendedo a usar óculos de realidade virtual." class="carousel-image">
+                <img src="Assets/images/medicos.png" alt="Medicos em servico comunitario." class="carousel-image">
+                <img src="Assets/images/mae-e-filha-preparando-se-para-plantar-uma-arvore-na-floresta.jpg" alt="Voluntarios plantando arvores." class="carousel-image">
+                <img src="Assets/images/voluntarios-limpando-em-madeiras-agradaveis.jpg" alt="Voluntarios limpando um parque sujo." class="carousel-image">
+                <img src="Assets/images/voluntario-lider.jpeg" alt="Voluntarios no parque." class="carousel-image">
+                <img src="Assets/images/medica-mulheres-sentando-ao-ar-livre.png" alt="Medica voluntaria conversando com paciente." class="carousel-image">
+            </div>
+        </section>
+
+        <!-- Seção Missão, Visão e Valores -->
+        <section id="missao" aria-labelledby="titulo-missao">
+            <div class="container"> <!-- Container para centralizar conteúdo -->
+                <h2 id="titulo-missao">Missão, Visão e Valores</h2>
+                <p>A missão da <strong>Semente do Futuro</strong> é transformar vidas por meio de projetos sociais sustentáveis. Visamos ampliar o impacto positivo na comunidade e atuamos com valores de transparência, solidariedade e inclusão.</p>
+            </div>
+        </section>
+
+        <!-- Seção Projetos em Destaque -->
+        <section id="projetos" aria-labelledby="titulo-projetos">
+            <div class="container"> <!-- Container principal da seção -->
+                <h2 id="titulo-projetos">Projetos em Destaque</h2>
+                <div class="grid"> <!-- Grid para organizar os cards -->
+                    <!-- Card de projeto -->
+                    <article class="card col-6">
+                        <h3>Projeto Educação para Todos</h3>
+                        <p>Capacitação de jovens em situação de vulnerabilidade social por meio de cursos gratuitos de tecnologia.</p>
+                    </article>
+                    <!-- Card de projeto -->
+                    <article class="card col-6">
+                        <h3>Projeto Saúde em Movimento</h3>
+                        <p>Ações itinerantes de saúde preventiva em comunidades periféricas.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container"> <!-- Container para centralizar conteúdo -->
+            <p>&copy; 2025 Semente do Futuro. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <div id="success-modal" class="modal">
+        <div class="modal-content card">
+            <button class="modal-close-btn" aria-label="Fechar">&times;</button>
+            <h3>Doação Recebida!</h3>
+            <p>Sua contribuição faz a diferença! Muito obrigado pelo seu apoio.</p>
+        </div>
+    </div>
+
+    <!-- Scripts JavaScript -->
+
+    <script src="Assets/js/theme-toggle.js"></script> <!-- Script para alternar tema claro/escuro -->
+
+    <script src="Assets/js/validation.js"></script> <!-- Script Para validar os formulários -->
+    
+    <script src="Assets/js/modal.js"></script> <!-- -->
+
+    <script src="Assets/js/carousel.js"></script> <!-- Controle do carrossel de imagens -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Biblioteca Chart.js para gráficos -->
+
+    <script src="Assets/js/charts.js"></script> <!-- Script para os gráficos -->
+
+    <script src="Assets/js/spa.js"></script> <!-- Script SPA -->
+
+</body>
+</html>
+

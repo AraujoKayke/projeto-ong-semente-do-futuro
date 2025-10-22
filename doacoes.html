@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+
+    <!-- Configurações básicas da página -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página de doações da ONG Semente do Futuro. Contribua e faça a diferença.">
+    <title>Semente do Futuro - Doações</title>
+
+
+    <!-- Ícone da aba do navegador -->
+    <link rel="icon" type="image/png" href="Assets/images/icon-semente-do-futuro.png">
+
+    <!-- Estilos globais -->
+    <link rel="stylesheet" href="Assets/css/base.css">
+    <link rel="stylesheet" href="Assets/css/layout.css">
+    <link rel="stylesheet" href="Assets/css/components.css">
+</head>
+<body>
+
+    <header>
+        <!-- Nome da ONG -->
+        <h1>Semente do Futuro</h1>
+
+        <!-- Botão de tema claro/escuro -->
+        <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Alterar tema">
+            <img src="Assets/images/sun.png" alt="Ícone de Sol" class="icon-sun">
+            <img src="Assets/images/moon.png" alt="Ícone de Lua" class="icon-moon">
+        </button>
+
+        <!-- Menu hambúrguer -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox">
+        <label for="menu-toggle" class="menu-hamburguer">
+            <!-- Ícone em SVG -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 12H21" stroke="var(--color-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3 6H21" stroke="var(--color-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3 18H21" stroke="var(--color-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </label>
+
+        <!-- Navegação principal -->
+        <nav aria-label="Menu principal">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li class="dropdown">
+                    <a href="projetos.html">Projetos &#9662;</a> <ul class="dropdown-menu">
+                        <li><a href="#">Educação para Todos</a></li>
+                        <li><a href="#">Saúde em Movimento</a></li>
+                        <li><a href="#">Verde para o Futuro</a></li>
+                    </ul>
+                </li>
+                <li><a href="voluntariado.html">Voluntariado</a></li>
+                <!-- Link ativo (página atual) -->
+                <li><a href="doacoes.html" class="active-link">Doações</a></li>
+                <li><a href="transparencia.html">Transparência</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+        <!-- Botão fixo de destaque para doações -->
+        <a href="doacoes.html" class="btn btn-primary">Seja um Doador</a>
+    </header>
+
+    <main>
+        <!-- Seção de doações -->
+        <section id="faca-sua-doacao" aria-labelledby="titulo-doacao">
+            <div class="container">
+                <div class="grid">
+                    <div class="col-6">
+                        <h2 id="titulo-doacao">Faça a Diferença Hoje</h2>
+                        <p>Sua doação é a semente que plantamos para colher um futuro melhor. Cada contribuição, não importa o valor, nos ajuda a manter nossos projetos e a transformar mais vidas.</p>
+                        <p>Escolha um projeto para apoiar ou faça uma doação geral para a causa. Agradecemos imensamente seu apoio!</p>
+                    </div>
+                    <div class="col-6">
+                        <!-- Formulario de doação -->
+                        <form action="#" data-validate="true" method="post" class="card" data-modal-title="Doação Recebida!" data-modal-text="Sua contribuição faz a diferença! Muito obrigado pelo seu apoio.">
+                            <fieldset>
+                                <legend>Sua Contribuição</legend>
+                                <label for="nome-doacao">Seu nome:</label>
+                                <input type="text" id="nome-doacao" name="nome" required>
+                                <label for="email-doacao">Seu email:</label>
+                                <input type="email" id="email-doacao" name="email" required>
+                                <label for="valor-doacao">Valor da doação (R$):</label>
+                                <input type="number" id="valor-doacao" name="valor" min="1" required placeholder="Ex: 50">
+                                <label for="projeto-doacao">Quero apoiar o projeto (opcional):</label>
+                                <select id="projeto-doacao" name="projeto">
+                                    <option value="geral">Doação Geral</option>
+                                    <option value="educacao">Educação para Todos</option>
+                                    <option value="saude">Saúde em Movimento</option>
+                                    <option value="verde">Verde para o Futuro</option>
+                                </select>
+                            </fieldset>
+                            <button type="submit" class="btn btn-primary">Doar Agora</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Semente do Futuro. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <div id="success-modal" class="modal">
+        <div class="modal-content card">
+            <button class="modal-close-btn" aria-label="Fechar">&times;</button>
+            <h3>Doação Recebida!</h3>
+            <p>Sua contribuição faz a diferença! Muito obrigado pelo seu apoio.</p>
+        </div>
+    </div>
+
+    <!-- Script para alternar tema claro/escuro -->
+    <script src="Assets/js/theme-toggle.js"></script>
+
+    <!-- Script para pop-up de agradecimento -->
+    <script src="Assets/js/modal.js"></script>
+
+    <!-- Script validação de formulário -->
+    <script src="Assets/js/validation.js"></script>
+
+</body>
+</html>

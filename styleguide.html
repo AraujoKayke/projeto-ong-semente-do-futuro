@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semente do Futuro - Guia de Estilo</title>
+    
+    <link rel="icon" type="image/png" href="Assets/images/icon-semente-do-futuro.png">
+    
+    <link rel="stylesheet" href="Assets/css/base.css">
+    <link rel="stylesheet" href="Assets/css/layout.css">
+    <link rel="stylesheet" href="Assets/css/components.css">
+    <link rel="stylesheet" href="Assets/css/styleguide.css">
+</head>
+<body>
+    
+    <header>
+        <a href="index.html" class="site-title-link">Semente do Futuro</a>
+        <nav aria-label="Menu principal">
+            <ul>
+                <li><a href="index.html">Voltar ao Site Principal</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            
+            <h1>Guia de Estilo (Design System)</h1>
+            
+            <div>
+                <p>Este documento cataloga todos os elementos visuais e componentes reutilizáveis do projeto "Semente do Futuro".</p>
+            </div> 
+
+            <section aria-labelledby="titulo-cores">
+                <h3 id="titulo-cores">Paleta de Cores</h3>
+                <div class="grid">
+                    <div class="col-2"><div class="color-swatch" style="background-color: var(--color-primary);"></div><div class="color-info"><strong>Primary</strong><br>#4CAF50</div></div>
+                    <div class="col-2"><div class="color-swatch" style="background-color: var(--color-primary-dark);"></div><div class="color-info"><strong>Primary Dark</strong><br>#388E3C</div></div>
+                    <div class="col-2"><div class="color-swatch" style="background-color: var(--color-secondary);"></div><div class="color-info"><strong>Secondary</strong><br>#8D6E63</div></div>
+                    <div class="col-2"><div class="color-swatch" style="background-color: var(--color-text);"></div><div class="color-info"><strong>Text</strong><br>#212121</div></div>
+                    <div class="col-2"><div class="color-swatch" style="background-color: var(--color-background);"></div><div class="color-info"><strong>Background</strong><br>#F5F5F5</div></div>
+                    <div class="col-2"><div class="color-swatch" style="background-color: var(--color-white);"></div><div class="color-info"><strong>Surface</strong><br>#FFFFFF</div></div>
+                </div>
+            </section>
+
+            <section aria-labelledby="titulo-tipografia">
+                <h3 id="titulo-tipografia">Tipografia</h3>
+                <p>Fonte Primária: <strong>Roboto</strong> | Fonte Secundária: <strong>Montserrat</strong></p>
+                <div class="component-showcase">
+                    <p class="h1-example">Título Nível 1 (h1)</p>
+                    <h2>Título Nível 2 (h2)</h2>
+                    <h3>Título Nível 3 (h3)</h3>
+                    <p>Este é um parágrafo de texto normal. Ele usa a fonte primária (Roboto) para garantir a máxima legibilidade em textos longos. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <a href="#">Este é um link padrão</a>
+                </div>
+            </section>
+
+            <section aria-labelledby="titulo-botoes">
+                <h3 id="titulo-botoes">Botões</h3>
+                <div class="component-showcase">
+                    <button class="btn btn-primary">Botão Primário</button>
+                    <button class="btn btn-secondary">Botão Secundário</button>
+                </div>
+            </section>
+
+            <section aria-labelledby="titulo-cards">
+                <h3 id="titulo-cards">Cards</h3>
+                <div class="grid">
+                    <div class="col-6">
+                        <h4>Card Padrão</h4>
+                        <div class="card">
+                            <h3>Título do Card</h3>
+                            <p>Este é o conteúdo de um card padrão, usado para agrupar informações de forma visualmente distinta.</p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <h4>Card Verde (Variação)</h4>
+                        <div class="card card--verde">
+                            <h3>Título do Card Verde</h3>
+                            <p>Esta é uma variação do card, usada em formulários para dar mais destaque e identidade visual.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section aria-labelledby="titulo-formularios">
+                <h3 id="titulo-formularios">Elementos de Formulário</h3>
+                <div class="component-showcase">
+                    <div class="grid">
+                        <div class="col-6">
+                            <label for="input-exemplo">Campo de Texto</label>
+                            <input type="text" id="input-exemplo" placeholder="Digite aqui...">
+                            <label for="select-exemplo">Menu de Seleção</label>
+                            <select id="select-exemplo"><option>Opção 1</option><option>Opção 2</option></select>
+                        </div>
+                        <div class="col-6">
+                            <div class="checkbox-group"><input type="checkbox" id="check-exemplo" checked><label for="check-exemplo">Opção de Checkbox</label></div>
+                            <div class="radio-group"><input type="radio" id="radio-exemplo" name="radio"><label for="radio-exemplo">Opção de Radio</label></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+</body>
+</html>
