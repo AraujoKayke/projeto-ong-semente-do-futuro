@@ -1,0 +1,177 @@
+/* ==========================================================================
+   Arquivo de Layout (layout.css)
+   - Define a estrutura principal e o grid do site.
+   - Estiliza os principais blocos estruturais (header, main, footer, sections).
+   - Contém todas as Media Queries para a responsividade do site.
+   ========================================================================== */
+
+/* --- Estrutura Principal e Grid --- */
+
+/* Container principal que centraliza o conteúdo */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-3);
+}
+
+/* Sistema de Grid de 12 colunas */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--space-3);
+}
+
+/* Classes utilitárias para o tamanho das colunas */
+.col-1 { grid-column: span 1; }
+.col-2 { grid-column: span 2; }
+.col-3 { grid-column: span 3; }
+.col-4 { grid-column: span 4; }
+.col-5 { grid-column: span 5; }
+.col-6 { grid-column: span 6; }
+.col-7 { grid-column: span 7; }
+.col-8 { grid-column: span 8; }
+.col-9 { grid-column: span 9; }
+.col-10 { grid-column: span 10; }
+.col-11 { grid-column: span 11; }
+.col-12 { grid-column: span 12; }
+
+/* --- Blocos Estruturais (Header, Footer, Sections) --- */
+
+/* Estilo do cabeçalho */
+header {
+    background-color: var(--color-white);
+    padding: var(--space-2) var(--space-4);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+header h1 {
+    color: var(--color-primary-dark);
+    margin: 0;
+    font-size: var(--fs-md);
+}
+
+/* Estilo da navegação principal */
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: var(--space-3);
+}
+
+header nav a {
+    color: var(--color-text);
+    font-weight: 500;
+}
+
+/* Estilo para o link da página ativa no menu */
+header nav a.active-link {
+    color: var(--color-primary);
+    font-weight: 700;
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 4px;
+}
+
+/* Ordem visual dos itens do header no DESKTOP */
+header h1 { order: 1; }
+header nav { order: 2; margin-left: auto; margin-right: auto; } /* Centraliza o menu */
+header .theme-toggle-btn { order: 3; }
+header .btn { order: 4; }
+header .menu-hamburguer, 
+header .menu-toggle-checkbox { order: 5; }
+
+/* Estilo padrão para seções de conteúdo */
+section {
+    padding: var(--space-5) 0;
+}
+
+.hero {
+    padding: 0; 
+}
+
+/* Estilo do rodapé */
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1);
+    padding-top: var(--space-5);
+    margin-top: var(--space-5);
+    border-top: 1px solid var(--color-border);
+}
+
+/* ==========================================================================
+   Responsividade (Media Queries)
+   ========================================================================== */
+
+/* Esconde os controles do menu hambúrguer em telas grandes */
+.menu-toggle-checkbox,
+.menu-hamburguer {
+    display: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* --- Para Tablets e Telas Menores (Ativa o Menu Hambúrguer) --- */
+@media (max-width: 992px) {
+    /* Mostra o ícone do hambúrguer */
+    .menu-hamburguer {
+        display: block;
+    }
+
+    /* O menu de navegação vira um overlay em tela cheia, escondido por padrão */
+    header nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--color-menu-overlay-bg);
+        backdrop-filter: blur(5px);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+        margin: 0; /* Reseta as margens do desktop */
+    }
+
+    /* Quando o checkbox é marcado, o menu aparece */
+    .menu-toggle-checkbox:checked ~ nav {
+        display: flex; 
+    }
+
+    /* Organiza os links do menu em uma coluna */
+    header nav ul {
+        flex-direction: column;
+        gap: var(--space-4);
+    }
+
+    /* Aumenta a fonte dos links para facilitar o toque */
+    header nav a {
+        font-size: var(--fs-lg);
+        font-family: var(--font-secondary);
+    }
+
+    /* Ordem visual dos itens do header no MOBILE */
+    header h1 { order: 1; margin-right: auto; }
+    header .theme-toggle-btn { order: 2; }
+    header .menu-hamburguer, 
+    header .menu-toggle-checkbox { order: 3; }
+    header nav { order: 4; }
+    header .btn { order: 5; display: none; } /* Esconde o botão "Seja um Doador" */
+
+    /* Ajusta as colunas do grid para 2 colunas */
+    .col-3, .col-4 {
+        grid-column: span 6;
+    }
+}
+
+/* --- Para Celulares (Empilha todas as colunas) --- */
+@media (max-width: 768px) {
+    /* Força todos os elementos do grid a ocuparem a largura total */
+    [class*="col-"] {
+        grid-column: span 12;
+    }
+}

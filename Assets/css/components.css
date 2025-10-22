@@ -1,0 +1,306 @@
+/* ==========================================================================
+   Arquivo de Componentes (components.css)
+   - Contém os estilos para todos os componentes reutilizáveis do site.
+   - Ex: Botões, Cards, Formulários, Carrossel, etc.
+   ========================================================================== */
+
+/* --- Componente: Botão --- */
+.btn {
+    display: inline-block;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-md);
+    font-size: var(--fs-base);
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-dark);
+    color: var(--color-white);
+}
+
+/* --- Componente: Card --- */
+.card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+    box-shadow: var(--shadow-md);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-bottom: var(--space-4);
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Variação de Card com fundo verde */
+.card--verde {
+    background-color: var(--color-primary-light);
+}
+
+.card--verde legend,
+.card--verde label {
+    color: var(--color-primary-dark);
+    font-weight: 500;
+}
+
+/* --- Componente: Formulário --- */
+input, select, textarea {
+    width: 100%;
+    padding: var(--space-2);
+    margin-bottom: var(--space-3);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: var(--fs-base);
+    background-color: var(--color-white);
+    color: var(--color-text);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+    outline: none;
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+    margin-bottom: var(--space-3);
+}
+
+legend {
+    font-size: var(--fs-md);
+    font-weight: 600;
+    margin-bottom: var(--space-3);
+    font-family: var(--font-secondary);
+}
+
+/* Estilos para grupos de checkbox e radio */
+.checkbox-group,
+.radio-group {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    margin-bottom: var(--space-2);
+}
+
+/* Remove a largura de 100% para estes tipos de input */
+input[type="checkbox"],
+input[type="radio"] {
+    width: auto;
+    margin-bottom: 0;
+}
+
+/* --- Componente: Carrossel --- */
+.hero-carousel {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.carousel-image.active {
+    opacity: 1;
+}
+
+/* --- Componente: Foto da Equipe --- */
+.team-photo {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    aspect-ratio: 1 / 1; /* Força a imagem a ser quadrada */
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-2);
+}
+
+/* --- Componente: Botão de Troca de Tema --- */
+.theme-toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text);
+}
+
+.theme-toggle-btn:hover {
+    color: var(--color-primary);
+}
+
+/* Estilo para as imagens ou SVGs dentro do botão de tema */
+.theme-toggle-btn img,
+.theme-toggle-btn svg {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+/* Lógica para mostrar o ícone correto com base no tema */
+.icon-sun { 
+    display: none; /* Esconde o sol por padrão (no tema claro) */
+}
+.icon-moon { 
+    display: inline-block; /* Mostra a lua por padrão (no tema claro) */
+}
+
+/* Quando o tema for escuro... */
+html[data-theme="dark"] .icon-sun { 
+    display: inline-block; /* ...mostramos o sol. */
+}
+html[data-theme="dark"] .icon-moon { 
+    display: none; /* ...e escondemos a lua. */
+}
+
+
+/* ==========================================================================
+   Componente: Menu Dropdown
+   ========================================================================== */
+
+/* Define o container do item do menu como a referência de posição */
+.dropdown {
+    position: relative;
+}
+
+/* Estilo do menu suspenso (escondido por padrão) */
+.dropdown-menu {
+    display: none; /* Começa escondido */
+    position: absolute; /* "Flutua" abaixo do item pai */
+    left: 0;
+    top: 100%; /* Posiciona logo abaixo do link "Projetos" */
+    background-color: var(--color-white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    list-style: none;
+    padding: var(--space-1) 0;
+    min-width: 200px; /* Largura mínima do dropdown */
+    z-index: 100; /* Garante que fique por cima de outros conteúdos */
+}
+
+/* Estilo dos links dentro do dropdown */
+.dropdown-menu li a {
+    display: block;
+    padding: var(--space-2) var(--space-3);
+    color: var(--color-text);
+    font-weight: 500;
+    border-bottom: none; /* Remove a linha de link ativo que pode ser herdada */
+}
+
+.dropdown-menu li a:hover {
+    background-color: var(--color-background);
+    color: var(--color-primary);
+}
+
+/* A MÁGICA: Quando o mouse passa sobre o .dropdown, o .dropdown-menu que está dentro dele aparece! */
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+    display: block;
+}
+
+/* ==========================================================================
+   Componente: Modal
+   ========================================================================== */
+
+/* O fundo escuro (overlay) que cobre a tela inteira */
+.modal {
+    display: none; /* Começa escondido */
+    position: fixed; /* Fica fixo na tela */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo preto semi-transparente */
+    z-index: 2000; /* Garante que fique por cima de tudo */
+    
+    /* Usa flexbox para centralizar o conteúdo do modal */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Quando o modal estiver ativo, ele aparece */
+.modal.ativo {
+    display: flex;
+}
+
+/* O conteúdo do modal (a "janela" branca) */
+.modal-content {
+    position: relative;
+    max-width: 500px; /* Largura máxima da janela */
+    width: 90%; /* Ocupa 90% da tela em dispositivos pequenos */
+}
+
+/* O botão de fechar (o "X") */
+.modal-close-btn {
+    position: absolute;
+    top: var(--space-2);
+    right: var(--space-3);
+    background: none;
+    border: none;
+    font-size: var(--fs-lg);
+    cursor: pointer;
+    color: var(--color-text);
+}
+
+/* ==========================================================================
+   Estilos para Mídia Incorporada (Vídeo e Áudio)
+   ========================================================================== */
+
+.media-showcase video,
+.media-showcase audio {
+    display: block; /* Garante que ocupem a linha inteira */
+    width: 100%;   /* Faz com que se ajustem à largura do container */
+    max-width: 600px; /* Define uma largura máxima para não ficarem gigantes em telas grandes */
+    margin: 0 auto var(--space-2); /* Centraliza e adiciona espaço embaixo */
+    border-radius: var(--radius-md);
+}
+
+.media-showcase figcaption {
+    text-align: center;
+    font-size: var(--fs-sm);
+    color: var(--color-text);
+    margin-bottom: var(--space-4);
+}
+
+/* ==========================================================================
+   Estilos para Validação de Formulários
+   ========================================================================== */
+
+/* Estilo do campo quando ele está inválido */
+input.invalid,
+textarea.invalid,
+select.invalid {
+    border-color: var(--color-danger-dark); /* Borda vermelha */
+    background-color: var(--color-danger-light); /* Fundo rosa claro */
+}
+
+/* Estilo da mensagem de erro */
+.error-message {
+    display: block; /* Garante que a mensagem fique abaixo do campo */
+    color: var(--color-danger-dark); /* Cor vermelha */
+    font-size: var(--fs-sm); /* Tamanho pequeno */
+    margin-top: -16px; /* Puxa a mensagem para mais perto do campo */
+    margin-bottom: var(--space-2); /* Adiciona espaço antes do próximo campo */
+}

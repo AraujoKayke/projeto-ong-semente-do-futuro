@@ -1,0 +1,125 @@
+/* ==========================================================================
+   Arquivo Base (base.css)
+   - Define as fundações do nosso Design System.
+   - Variáveis globais (cores, fontes, espaçamentos).
+   - Estilos do Tema Escuro (Dark Mode).
+   - Reset de CSS e estilos globais para elementos HTML.
+   ========================================================================== */
+
+/* Define as variáveis CSS globais para o tema claro (padrão) */
+:root {
+    /* --- Paleta de Cores --- */
+    --color-primary: #4CAF50;
+    --color-primary-dark: #388E3C;
+    --color-primary-light: #A5D6A7;
+    --color-secondary: #8D6E63;
+    --color-secondary-dark: #5D4037;
+    --color-secondary-light: #D7CCC8;
+    
+    /* Cores Neutras */
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+    --color-text: #212121;
+    --color-background: #F5F5F5;
+    --color-border: #E0E0E0;
+    
+    /* --- Tipografia --- */
+    --font-primary: 'Roboto', Arial, sans-serif;
+    --font-secondary: 'Montserrat', sans-serif;
+
+    /* --- Escala de Tamanhos de Fonte (Fluid Typography) --- */
+    --fs-xl: 2.5rem;
+    --fs-lg: 2rem;
+    --fs-md: 1.25rem;
+    --fs-base: 1rem;
+    --fs-sm: 0.875rem;
+
+    /* --- Sistema de Espaçamento (Base 8px) --- */
+    --space-1: 8px;   /* 1 * 8px */
+    --space-2: 16px;  /* 2 * 8px */
+    --space-3: 24px;  /* 3 * 8px */
+    --space-4: 32px;  /* 4 * 8px */
+    --space-5: 48px;  /* 6 * 8px */
+    --space-6: 64px;  /* 8 * 8px */
+
+    /* --- Bordas e Sombras --- */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.15);
+    --shadow-lg: 0 8px 12px rgba(0,0,0,0.2);
+
+    /* Bg menu mobile */
+    --color-menu-overlay-bg: rgba(255, 255, 255, 0.85);
+}
+
+/* Sobrescreve as variáveis globais quando o tema escuro está ativo */
+html[data-theme="dark"] {
+    --color-text: #E0E0E0;
+    --color-background: #121212;
+    --color-white: #1E1E1E; /* Cor de fundo para componentes como cards */
+    --color-border: #424242;
+    
+    /* Ajusta cores primárias e secundárias para melhor contraste */
+    --color-primary: #66BB6A;
+    --color-primary-dark: #81C784;
+    --color-secondary: #A1887F;
+    --color-secondary-light: #4E4643;
+    
+    /* Ajusta sombras para serem visíveis no fundo escuro */
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.5);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.6);
+
+    /* Cor menu mobile */
+     --color-menu-overlay-bg: rgba(30, 30, 30, 0.85); /* Um preto semi-transparente */
+}
+
+/* --- Reset e Estilos Globais --- */
+
+/* Zera margens e paddings e define box-sizing para todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configurações globais para o HTML */
+html {
+    font-size: 16px; /* Base para unidades 'rem' */
+    scroll-behavior: smooth; /* Rolagem suave para links de âncora */
+}
+
+/* Estilos principais do corpo da página */
+body {
+    font-family: var(--font-primary);
+    font-size: var(--fs-base);
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    /* Transição suave de cores ao trocar de tema */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Estilos de Tipografia Padrão */
+h1, h2, h3 {
+    font-family: var(--font-secondary);
+    line-height: 1.2;
+}
+
+h1 { font-size: var(--fs-xl); margin-bottom: var(--space-4); }
+h2 { font-size: var(--fs-lg); margin-bottom: var(--space-3); }
+h3 { font-size: var(--fs-md); font-weight: 500; margin-bottom: var(--space-2); }
+p  { margin-bottom: var(--space-2); }
+
+/* Estilos Padrão para Links */
+a {
+    color: var(--color-primary-dark);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
